@@ -1,0 +1,16 @@
+@"
+version: '3.8'
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:2.9.4
+    container_name: n8n_server
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    volumes:
+      - n8n-docker_n8n_data:/home/node/.n8n
+
+volumes:
+  n8n-docker_n8n_data:
+    external: true
+"@ | Out-File -FilePath docker-compose.yml -Encoding utf8
