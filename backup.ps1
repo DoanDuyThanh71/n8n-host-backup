@@ -1,5 +1,4 @@
-@'
-Set-Location D:\PJ\n8n-host-backup\editVideo
+﻿Set-Location D:\PJ\n8n-host-backup\editVideo
 
 docker run --rm `
   -v n8n-docker_n8n_data:/data `
@@ -13,4 +12,3 @@ git commit -m "backup: $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
 git push origin main
 
 Write-Host "Push GitHub xong!"
-'@ | Out-File -FilePath backup.ps1 -Encoding utf8
